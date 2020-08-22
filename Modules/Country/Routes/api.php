@@ -11,12 +11,19 @@
 |
 */
 
-Route::group([
-    "middleware" => "api"
-], function () {
-    Route::get("countries",         "CountryController@index");
-    Route::get("countries/{id}",    "CountryController@show");
-    Route::post("countries",        "CountryController@store");
-    Route::put("countries/{id}",    "CountryController@update");
+Route::group(["middleware" => "api"], function () {
+    # Display a listing of the resource.
+    Route::get("countries", "CountryController@index");
+
+    # Show the specified resource.
+    Route::get("countries/{id}", "CountryController@show");
+
+    # Store a newly created resource in storage.
+    Route::post("countries", "CountryController@store");
+
+    # Update the specified resource in storage.
+    Route::put("countries/{id}", "CountryController@update");
+
+    # Remove the specified resource from storage.
     Route::delete("countries/{id}", "CountryController@destroy");
 });

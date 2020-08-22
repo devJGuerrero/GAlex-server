@@ -2,7 +2,6 @@
 
 namespace Modules\Country\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Country\Repository\Country;
 use Modules\Country\Transformers\Resource;
@@ -18,7 +17,7 @@ class CountryController extends Controller
     public function index(Country $country)
     {
         return Resource::collection(
-            $country->getALL()
+            $country->getItems()
         );
     }
 
@@ -30,7 +29,7 @@ class CountryController extends Controller
     public function show(Country $country, $id)
     {
         return new Resource(
-            $country->getID($id)
+            $country->getItem($id)
         );
     }
 
@@ -42,7 +41,7 @@ class CountryController extends Controller
     public function store(ValidateStore $request, Country $country)
     {
         return new Resource(
-            $country->store($request->all())
+            $country->createItem($request->all())
         );
     }
 
@@ -55,7 +54,7 @@ class CountryController extends Controller
     public function update(ValidateStore $request, $id, Country $country)
     {
         return new Resource(
-            $country->update($id, $request->all())
+            $country->updateItem($id, $request->all())
         );
     }
 
@@ -67,7 +66,7 @@ class CountryController extends Controller
     public function destroy($id, Country $country)
     {
         return new Resource(
-            $country->destroy($id)
+            $country->destroyItem($id)
         );
     }
 }

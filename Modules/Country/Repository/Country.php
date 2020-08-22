@@ -3,16 +3,15 @@
 namespace Modules\Country\Repository;
 
 use Modules\Country\Entities\Country as Model;
-use Modules\Country\Transformers\Resource;
 
-class Country {
+class Country extends Model {
     /**
      * Get all countries
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
-    public function getALL() {
-        return Model::all();
+    public function getItems() {
+        return $this->all();
     }
 
     /**
@@ -21,8 +20,8 @@ class Country {
      * @param  string $id
      * @return Illuminate\Database\Eloquent\Collection
      */
-    public function getID($id) {
-        return Model::findOrFail($id);
+    public function getItem($id) {
+        return $this->findOrFail($id);
     }
 
     /**
@@ -31,8 +30,8 @@ class Country {
      * @param  array $attributes
      * @return Illuminate\Database\Eloquent\Collection
      */
-    public function store($attributes) {
-        return Model::create($attributes);
+    public function createItem($attributes) {
+        return $this->create($attributes);
     }
 
     /**
@@ -42,8 +41,8 @@ class Country {
      * @param  array  $attributes
      * @return Illuminate\Database\Eloquent\Collection
      */
-    public function update($id, $attributes) {
-        return tap(Model::findOrFail($id))->update($attributes);
+    public function updateItem($id, $attributes) {
+        return tap($this->findOrFail($id))->update($attributes);
     }
 
     /**
@@ -52,8 +51,8 @@ class Country {
      * @param  string $id
      * @return Illuminate\Database\Eloquent\Collection
      */
-    public function destroy($id) {
-        $country = Model::findOrFail($id); Model::destroy($id);
+    public function destroyItem($id) {
+        $country = $this->findOrFail($id); $this->destroy($id);
         return $country;
     }
 }

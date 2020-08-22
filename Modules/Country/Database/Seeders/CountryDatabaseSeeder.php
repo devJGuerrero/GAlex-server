@@ -3,6 +3,7 @@
 namespace Modules\Country\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Modules\Country\Entities\Country;
 use Illuminate\Database\Eloquent\Model;
 
 class CountryDatabaseSeeder extends Seeder
@@ -16,6 +17,6 @@ class CountryDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        factory(Country::class, 50)->create();
     }
 }

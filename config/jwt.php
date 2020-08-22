@@ -16,7 +16,7 @@ return [
     | JWT Authentication Secret
     |--------------------------------------------------------------------------
     |
-    | Don't forget to set this in your .env file, as it will be used to sign
+    | Don"t forget to set this in your .env file, as it will be used to sign
     | your tokens. A helper command is provided for this:
     | `php artisan jwt:secret`
     |
@@ -25,7 +25,7 @@ return [
     |
     */
 
-    'secret' => env('JWT_SECRET'),
+    "secret" => env("JWT_SECRET"),
 
     /*
     |--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ return [
     |
     */
 
-    'keys' => [
+    "keys" => [
 
         /*
         |--------------------------------------------------------------------------
@@ -53,11 +53,11 @@ return [
         |
         | A path or resource to your public key.
         |
-        | E.g. 'file://path/to/public/key'
+        | E.g. "file://path/to/public/key"
         |
         */
 
-        'public' => env('JWT_PUBLIC_KEY'),
+        "public" => env("JWT_PUBLIC_KEY"),
 
         /*
         |--------------------------------------------------------------------------
@@ -66,11 +66,11 @@ return [
         |
         | A path or resource to your private key.
         |
-        | E.g. 'file://path/to/private/key'
+        | E.g. "file://path/to/private/key"
         |
         */
 
-        'private' => env('JWT_PRIVATE_KEY'),
+        "private" => env("JWT_PRIVATE_KEY"),
 
         /*
         |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return [
         |
         */
 
-        'passphrase' => env('JWT_PASSPHRASE'),
+        "passphrase" => env("JWT_PASSPHRASE"),
 
     ],
 
@@ -97,11 +97,11 @@ return [
     | Some people may want this behaviour for e.g. a mobile app.
     | This is not particularly recommended, so make sure you have appropriate
     | systems in place to revoke the token if necessary.
-    | Notice: If you set this to null you should remove 'exp' element from 'required_claims' list.
+    | Notice: If you set this to null you should remove "exp" element from "required_claims" list.
     |
     */
 
-    'ttl' => env('JWT_TTL', 60),
+    "ttl" => env("JWT_TTL", 60),
 
     /*
     |--------------------------------------------------------------------------
@@ -120,7 +120,7 @@ return [
     |
     */
 
-    'refresh_ttl' => env('JWT_REFRESH_TTL', 20160),
+    "refresh_ttl" => env("JWT_REFRESH_TTL", 20160),
 
     /*
     |--------------------------------------------------------------------------
@@ -134,7 +134,7 @@ return [
     |
     */
 
-    'algo' => env('JWT_ALGO', 'HS256'),
+    "algo" => env("JWT_ALGO", "HS256"),
 
     /*
     |--------------------------------------------------------------------------
@@ -147,13 +147,13 @@ return [
     |
     */
 
-    'required_claims' => [
-        'iss',
-        'iat',
-        'exp',
-        'nbf',
-        'sub',
-        'jti',
+    "required_claims" => [
+        "iss",
+        "iat",
+        "exp",
+        "nbf",
+        "sub",
+        "jti",
     ],
 
     /*
@@ -169,9 +169,9 @@ return [
     |
     */
 
-    'persistent_claims' => [
-        // 'foo',
-        // 'bar',
+    "persistent_claims" => [
+        // "foo",
+        // "bar",
     ],
 
     /*
@@ -191,7 +191,7 @@ return [
     |
     */
 
-    'lock_subject' => true,
+    "lock_subject" => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -208,7 +208,7 @@ return [
     |
     */
 
-    'leeway' => env('JWT_LEEWAY', 0),
+    "leeway" => env("JWT_LEEWAY", 0),
 
     /*
     |--------------------------------------------------------------------------
@@ -220,7 +220,7 @@ return [
     |
     */
 
-    'blacklist_enabled' => env('JWT_BLACKLIST_ENABLED', true),
+    "blacklist_enabled" => env("JWT_BLACKLIST_ENABLED", true),
 
     /*
     | -------------------------------------------------------------------------
@@ -235,7 +235,7 @@ return [
     |
     */
 
-    'blacklist_grace_period' => env('JWT_BLACKLIST_GRACE_PERIOD', 0),
+    "blacklist_grace_period" => env("JWT_BLACKLIST_GRACE_PERIOD", 0),
 
     /*
     |--------------------------------------------------------------------------
@@ -253,7 +253,7 @@ return [
     |
     */
 
-    'decrypt_cookies' => false,
+    "decrypt_cookies" => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -264,7 +264,7 @@ return [
     |
     */
 
-    'providers' => [
+    "providers" => [
 
         /*
         |--------------------------------------------------------------------------
@@ -275,7 +275,7 @@ return [
         |
         */
 
-        'jwt' => Tymon\JWTAuth\Providers\JWT\Lcobucci::class,
+        "jwt" => Tymon\JWTAuth\Providers\JWT\Lcobucci::class,
 
         /*
         |--------------------------------------------------------------------------
@@ -286,7 +286,7 @@ return [
         |
         */
 
-        'auth' => Tymon\JWTAuth\Providers\Auth\Illuminate::class,
+        "auth" => Tymon\JWTAuth\Providers\Auth\Illuminate::class,
 
         /*
         |--------------------------------------------------------------------------
@@ -297,7 +297,7 @@ return [
         |
         */
 
-        'storage' => Tymon\JWTAuth\Providers\Storage\Illuminate::class,
+        "storage" => Tymon\JWTAuth\Providers\Storage\Illuminate::class,
 
     ],
 

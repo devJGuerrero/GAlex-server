@@ -9,13 +9,13 @@ return [
     |
     | This option controls the default authentication "guard" and password
     | reset options for your application. You may change these defaults
-    | as required, but they're a perfect start for most applications.
+    | as required, but they"re a perfect start for most applications.
     |
     */
 
-    'defaults' => [
-        'guard' => 'api',
-        'passwords' => 'users',
+    "defaults" => [
+        "guard" => "api",
+        "passwords" => "users",
     ],
 
     /*
@@ -29,22 +29,22 @@ return [
     |
     | All authentication drivers have a user provider. This defines how the
     | users are actually retrieved out of your database or other storage
-    | mechanisms used by this application to persist your user's data.
+    | mechanisms used by this application to persist your user"s data.
     |
     | Supported: "session", "token"
     |
     */
 
-    'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
+    "guards" => [
+        "web" => [
+            "driver" => "session",
+            "provider" => "users",
         ],
 
-        'api' => [
-            'driver' => 'jwt',
-            'provider' => 'users',
-            'hash' => false,
+        "api" => [
+            "driver" => "jwt",
+            "provider" => "users",
+            "hash" => false,
         ],
     ],
 
@@ -55,7 +55,7 @@ return [
     |
     | All authentication drivers have a user provider. This defines how the
     | users are actually retrieved out of your database or other storage
-    | mechanisms used by this application to persist your user's data.
+    | mechanisms used by this application to persist your user"s data.
     |
     | If you have multiple user tables or models you may configure multiple
     | sources which represent each model / table. These sources may then
@@ -65,15 +65,15 @@ return [
     |
     */
 
-    'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\User::class,
+    "providers" => [
+        "users" => [
+            "driver" => "eloquent",
+            "model" => App\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
+        // "users" => [
+        //     "driver" => "database",
+        //     "table" => "users",
         // ],
     ],
 
@@ -92,12 +92,12 @@ return [
     |
     */
 
-    'passwords' => [
-        'users' => [
-            'provider' => 'users',
-            'table' => 'password_resets',
-            'expire' => 60,
-            'throttle' => 60,
+    "passwords" => [
+        "users" => [
+            "provider" => "users",
+            "table" => "password_resets",
+            "expire" => 60,
+            "throttle" => 60,
         ],
     ],
 
@@ -112,6 +112,6 @@ return [
     |
     */
 
-    'password_timeout' => 10800,
+    "password_timeout" => 10800,
 
 ];

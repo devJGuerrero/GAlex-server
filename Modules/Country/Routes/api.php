@@ -17,4 +17,5 @@ Route::group([
     "middleware" => "api"
 ], function () {
     Route::get("countries", "CountryController@index");
+    Route::get("countries/{id}", "CountryController@show");
 });

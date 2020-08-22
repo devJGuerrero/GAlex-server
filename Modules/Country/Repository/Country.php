@@ -10,7 +10,16 @@ class Country {
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
-    public function all() {
+    public function getALL() {
         return Model::all();
+    }
+
+    /**
+     * Get country by its identifier
+     *
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function getID($id) {
+        return Model::findOrFail($id);
     }
 }

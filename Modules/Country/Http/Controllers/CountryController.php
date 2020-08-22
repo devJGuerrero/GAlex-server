@@ -16,7 +16,7 @@ class CountryController extends Controller
      */
     public function index(Country $country)
     {
-        return Resource::collection($country->all());
+        return Resource::collection($country->getALL());
     }
 
     /**
@@ -43,9 +43,9 @@ class CountryController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function show($id)
+    public function show(Country $country, $id)
     {
-        return view('country::show');
+        return new Resource($country->getID($id));
     }
 
     /**

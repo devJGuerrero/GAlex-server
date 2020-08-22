@@ -64,8 +64,10 @@ class CountryController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function destroy($id)
+    public function destroy($id, Country $country)
     {
-        //
+        return new Resource(
+            $country->destroy($id)
+        );
     }
 }

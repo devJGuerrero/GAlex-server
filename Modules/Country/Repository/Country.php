@@ -22,4 +22,13 @@ class Country {
     public function getID($id) {
         return Model::findOrFail($id);
     }
+
+    /**
+     * Store a country
+     *
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function store($attributes) {
+        return Model::create($attributes);
+    }
 }

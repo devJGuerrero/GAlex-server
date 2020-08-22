@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller;
 use Modules\Country\Repository\Country;
 use Modules\Country\Transformers\Resource;
 use Illuminate\Contracts\Support\Renderable;
+use Modules\Country\Http\Requests\ValidateStore;
 
 class CountryController extends Controller
 {
@@ -16,26 +17,9 @@ class CountryController extends Controller
      */
     public function index(Country $country)
     {
-        return Resource::collection($country->getALL());
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     * @return Renderable
-     */
-    public function create()
-    {
-        return view('country::create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
-    {
-        //
+        return Resource::collection(
+            $country->getALL()
+        );
     }
 
     /**
@@ -45,7 +29,21 @@ class CountryController extends Controller
      */
     public function show(Country $country, $id)
     {
-        return new Resource($country->getID($id));
+        return new Resource(
+            $country->getID($id)
+        );
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     * @param ValidateStore $request
+     * @return Renderable
+     */
+    public function store(ValidateStore $request, Country $country)
+    {
+        return new Resource(
+            $country->store($request->all())
+        );
     }
 
     /**

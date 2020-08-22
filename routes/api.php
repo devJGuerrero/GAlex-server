@@ -26,4 +26,5 @@ Route::group([
   "middleware" => "api"
 ], function () {
   Route::get("users", "UserController@index");
+  Route::post("users", "UserController@store");
 });

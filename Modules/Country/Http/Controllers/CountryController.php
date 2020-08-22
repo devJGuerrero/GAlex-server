@@ -2,21 +2,21 @@
 
 namespace Modules\Country\Http\Controllers;
 
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\Country\Entities\Country;
-use Modules\Country\Transformers\CountryResource;
+use Modules\Country\Repository\Country;
+use Modules\Country\Transformers\Resource;
+use Illuminate\Contracts\Support\Renderable;
 
 class CountryController extends Controller
 {
-    /**
+   /**
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index()
+    public function index(Country $country)
     {
-        return CountryResource::collection(Country::all());
+        return Resource::collection($country->all());
     }
 
     /**

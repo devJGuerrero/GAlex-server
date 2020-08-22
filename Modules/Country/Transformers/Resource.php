@@ -4,7 +4,7 @@ namespace Modules\Country\Transformers;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CountryResource extends JsonResource
+class Resource extends JsonResource
 {
     /**
      * Transform the resource into an array.

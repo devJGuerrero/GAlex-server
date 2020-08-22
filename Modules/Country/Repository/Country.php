@@ -31,4 +31,13 @@ class Country {
     public function store($attributes) {
         return Model::create($attributes);
     }
+
+    /**
+     * Update a country
+     *
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function update($id, $attributes) {
+        return tap(Model::findOrFail($id))->update($attributes);
+    }
 }

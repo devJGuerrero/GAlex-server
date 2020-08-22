@@ -47,24 +47,16 @@ class CountryController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit($id)
-    {
-        return view('country::edit');
-    }
-
-    /**
      * Update the specified resource in storage.
-     * @param Request $request
+     * @param ValidateStore $request
      * @param int $id
      * @return Renderable
      */
-    public function update(Request $request, $id)
+    public function update(ValidateStore $request, $id, Country $country)
     {
-        //
+        return new Resource(
+            $country->update($id, $request->all())
+        );
     }
 
     /**

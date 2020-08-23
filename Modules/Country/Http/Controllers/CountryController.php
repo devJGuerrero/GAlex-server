@@ -5,7 +5,6 @@ namespace Modules\Country\Http\Controllers;
 use Illuminate\Routing\Controller;
 use Modules\Country\Repository\Country;
 use Modules\Country\Transformers\Resource;
-use Illuminate\Contracts\Support\Renderable;
 use Modules\Country\Http\Requests\ValidateStore;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 

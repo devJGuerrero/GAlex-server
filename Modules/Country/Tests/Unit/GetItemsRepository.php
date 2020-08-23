@@ -3,16 +3,15 @@
 namespace Modules\Country\Tests\Unit;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Modules\Country\Database\Seeders\CountryDatabaseSeeder;
 
 class GetItemsRepository extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseMigrations;
     /**
-     * A basic unit test example.
+     * Unit test: Get all countries.
      *
      * @return void
      */

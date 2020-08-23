@@ -1,0 +1,38 @@
+<?php
+
+namespace Modules\Country\Tests\Unit;
+
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Modules\Country\Database\Seeders\CountryDatabaseSeeder;
+
+class GetItemsRepository extends TestCase
+{
+    use RefreshDatabase;
+    /**
+     * A basic unit test example.
+     *
+     * @return void
+     */
+    public function testCountryGetItems()
+    {
+        # Population table of countries
+        $this->seed(CountryDatabaseSeeder::class);
+
+        # Request all countries and validate response structure
+        $response = $this->withHeaders([
+            "Accept" => "application/json"
+        ])
+        ->json("GET", "api/countries");
+        $response
+            ->assertStatus(Response::HTTP_OK)
+            ->assertJsonCount(50, "data")
+            ->assertJsonStructure([
+                "data" => [
+                    ["name", "created", "updated"]
+                ]
+            ]);
+    }
+}

@@ -29,7 +29,7 @@ class AuthController extends Controller
   {
     $credentials = $request->only("email", "password");
     $user = User::where("email", $credentials["email"])->first();
-    if ($token = $this->guard()->claims([
+    if ($user && $token = $this->guard()->claims([
       "id"    => $user->id,
       "name"  => $user->name,
       "email" => $user->email

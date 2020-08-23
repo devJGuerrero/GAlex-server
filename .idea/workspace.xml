@@ -3,17 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7dd1d97d-2ae3-4059-8a38-aa7cd9d9df17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Country/Tests/Unit/CreateItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Country/Tests/Unit/CreateItem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Country/Tests/Unit/GetItemRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Country/Tests/Unit/GetItemRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Country/Tests/Unit/GetItemsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Country/Tests/Unit/GetItemsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Country/Tests/Unit/UpdateItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Country/Tests/Unit/UpdateItem.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -173,6 +169,7 @@
       <option name="presentableId" value="Default" />
       <updated>1598195233892</updated>
       <workItem from="1598195235428" duration="7880000" />
+      <workItem from="1598221399870" duration="585000" />
     </task>
     <servers />
   </component>

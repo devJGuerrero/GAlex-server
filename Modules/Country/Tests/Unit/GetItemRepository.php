@@ -29,7 +29,7 @@ class GetItemRepository extends TestCase
             ->assertStatus(Response::HTTP_OK)
             ->assertJsonStructure([
                 "data" => [
-                    "name", "created", "updated"
+                    "id", "name", "created", "updated"
                 ]
             ]);
     }

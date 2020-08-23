@@ -30,7 +30,7 @@ class CreateItem extends TestCase
             ->assertCreated()
             ->assertJsonStructure([
                 "data" => [
-                    "name", "created", "updated"
+                    "id", "name", "created", "updated"
                 ]
             ]);
     }

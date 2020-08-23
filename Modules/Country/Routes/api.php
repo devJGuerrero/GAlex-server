@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::group(["middleware" => "api"], function () {
     # Display a listing of the resource.
     Route::get("countries", "CountryController@index");

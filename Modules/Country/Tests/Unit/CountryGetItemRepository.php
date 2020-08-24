@@ -4,26 +4,27 @@ namespace Modules\Country\Tests\Unit;
 
 use Tests\TestCase;
 use Symfony\Component\HttpFoundation\Response;
-use Modules\Country\Database\Seeders\CountryDatabaseSeeder;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Modules\Country\Database\Seeders\CountryDatabaseSeeder;
 
-class DestroyItem extends TestCase
+class CountryGetItemRepository extends TestCase
 {
     use DatabaseMigrations;
     /**
-     * Unit test: Destroy country.
+     * Unit test: Obtain a country by identifier.
      *
      * @return void
      */
-    public function testCountryDestroyItem()
+    public function testCountryGetItem()
     {
         # Population table of countries
         $this->seed(CountryDatabaseSeeder::class);
 
+        # Request all countries and validate response structure
         $response = $this->withHeaders([
             "Accept" => "application/json"
         ])
-            ->json("DELETE", "api/countries/1");
+            ->json("GET", "api/countries/50");
         $response
             ->assertStatus(Response::HTTP_OK)
             ->assertJsonStructure([

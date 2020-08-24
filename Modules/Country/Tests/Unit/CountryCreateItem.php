@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Modules\Country\Database\Seeders\CountryDatabaseSeeder;
 
-class CreateItem extends TestCase
+class CountryCreateItem extends TestCase
 {
     use DatabaseMigrations;
     /**

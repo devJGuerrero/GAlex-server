@@ -1,8 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:devJGuerrero" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:devJGuerrero" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:devJGuerrero" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:release" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:release" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7dd1d97d-2ae3-4059-8a38-aa7cd9d9df17" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Modules/Region/Repositories/Region.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Region/Tests/Unit/RegionCreateItem.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Region/Tests/Unit/RegionDestroyItem.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Region/Tests/Unit/RegionGetItemRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Region/Tests/Unit/RegionGetItemsRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Region/Tests/Unit/RegionUpdateItem.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Country/Http/Controllers/CountryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Country/Http/Controllers/CountryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Country/Repository/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Country/Repositories/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Country/Repository/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Country/Repositories/Country.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Country/Tests/Unit/CreateItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Country/Tests/Unit/CountryCreateItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Country/Tests/Unit/DestroyItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Country/Tests/Unit/CountryDestroyItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Country/Tests/Unit/GetItemRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Country/Tests/Unit/CountryGetItemRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Country/Tests/Unit/GetItemsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Country/Tests/Unit/CountryGetItemsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Country/Tests/Unit/UpdateItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Country/Tests/Unit/CountryUpdateItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Region/Database/Seeders/RegionDatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Region/Database/Seeders/RegionDatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Region/Http/Controllers/RegionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Region/Http/Controllers/RegionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Region/Providers/RegionServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Region/Providers/RegionServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Region/Resources/assets/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Region/Resources/assets/sass/app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Region/Resources/lang/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Region/Resources/views/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Region/Resources/views/layouts/master.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Region/Routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Region/Routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Region/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Region/Routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,12 +221,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Region/Tests/Unit" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jose Guerrero\Documents\Github\GAlex-server\Modules\Region\Tests\Unit" />
+      <recent name="C:\Users\Jose Guerrero\Documents\Github\GAlex-server\Modules\Region\Http\Controllers" />
+      <recent name="C:\Users\Jose Guerrero\Documents\Github\GAlex-server\Modules\Region\Routes" />
+      <recent name="C:\Users\Jose Guerrero\Documents\Github\GAlex-server\Modules\Region\Repositories" />
+    </key>
   </component>
   <component name="RunManager" selected="PHPUnit.CreateItem.testCountryCreateItemValidateFieldName">
     <configuration name="CreateItem.testCountryCreateItemValidateFieldName" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Modules\Country\Tests\Unit\CreateItem" file="$PROJECT_DIR$/Modules/Country/Tests/Unit/CreateItem.php" method="testCountryCreateItemValidateFieldName" scope="Method" />
+      <TestRunner class="Modules\Country\Tests\Unit\CreateItem" file="$PROJECT_DIR$/Modules/Country/Tests/Unit/CountryCreateItem.php" method="testCountryCreateItemValidateFieldName" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -169,26 +256,41 @@
       <option name="presentableId" value="Default" />
       <updated>1598195233892</updated>
       <workItem from="1598195235428" duration="7880000" />
-      <workItem from="1598221399870" duration="585000" />
+      <workItem from="1598221399870" duration="7776000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="610" y="309" key="#Composer" timestamp="1598195345436">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="610" y="309" key="#Composer/1600.0.1536.832/0.0.1600.860@0.0.1600.860" timestamp="1598195345436" />
-    <state x="426" y="108" key="#Inspections" timestamp="1598197129434">
+    <state x="426" y="108" key="#Inspections" timestamp="1598223079486">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="426" y="108" key="#Inspections/1600.0.1536.832/0.0.1600.860@0.0.1600.860" timestamp="1598197129434" />
-    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598219599439">
+    <state x="426" y="108" key="#Inspections/1600.0.1536.832/0.0.1600.860@0.0.1600.860" timestamp="1598223079486" />
+    <state x="509" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598229359461">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1600.0.1536.832/0.0.1600.860@0.0.1600.860" timestamp="1598219599439" />
+    <state x="509" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1600.0.1536.832/0.0.1600.860@0.0.1600.860" timestamp="1598229359461" />
+    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598226306448">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1600.0.1536.832/0.0.1600.860@0.0.1600.860" timestamp="1598226306448" />
     <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1598195334101">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

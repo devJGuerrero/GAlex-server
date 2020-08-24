@@ -7,24 +7,25 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Modules\Country\Database\Seeders\CountryDatabaseSeeder;
 
-class GetItemRepository extends TestCase
+class CountryUpdateItem extends TestCase
 {
     use DatabaseMigrations;
     /**
-     * Unit test: Obtain a country by identifier.
+     * Unit test: Update country.
      *
      * @return void
      */
-    public function testCountryGetItem()
+    public function testCountryUpdateItem()
     {
         # Population table of countries
         $this->seed(CountryDatabaseSeeder::class);
 
-        # Request all countries and validate response structure
         $response = $this->withHeaders([
             "Accept" => "application/json"
         ])
-            ->json("GET", "api/countries/50");
+            ->json("PUT", "api/countries/1", [
+                "name" => "Albania"
+            ]);
         $response
             ->assertStatus(Response::HTTP_OK)
             ->assertJsonStructure([
@@ -32,5 +33,19 @@ class GetItemRepository extends TestCase
                     "id", "name", "created", "updated"
                 ]
             ]);
+    }
+
+    /**
+     * Unit test: Validate field name country.
+     *
+     * @return void
+     */
+    public function testCountryUpdateItemValidateFieldName() {
+        $response = $this->withHeaders([
+            "Accept" => "application/json"
+        ])
+            ->json("PUT", "api/countries/1");
+        $response
+            ->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Country\Repository;
+namespace Modules\Country\Repositories;
 
 use Illuminate\Database\Eloquent\Collection;
 use Modules\Country\Entities\Country as Model;

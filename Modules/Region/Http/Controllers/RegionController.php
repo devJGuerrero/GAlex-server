@@ -2,78 +2,81 @@
 
 namespace Modules\Region\Http\Controllers;
 
-use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Region\Repositories\Region;
+use Modules\Region\Transformers\Resource;
+use Modules\Region\Http\Requests\Validate;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class RegionController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * @return Renderable
+     *
+     * @param Region $region
+     * @return AnonymousResourceCollection
      */
-    public function index()
+    public function index(Region $region)
     {
-        return view('region::index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     * @return Renderable
-     */
-    public function create()
-    {
-        return view('region::create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
-    {
-        //
+        return Resource::collection(
+            $region->getItems()
+        );
     }
 
     /**
      * Show the specified resource.
+     *
      * @param int $id
-     * @return Renderable
+     * @param Region $region
+     * @return Resource
      */
-    public function show($id)
+    public function show($id, Region $region)
     {
-        return view('region::show');
+        return new Resource(
+            $region->getItem($id)
+        );
     }
 
     /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
+     * Store a newly created resource in storage.
+     *
+     * @param Validate $request
+     * @param Region $region
+     * @return Resource
      */
-    public function edit($id)
+    public function store(Validate $request, Region $region)
     {
-        return view('region::edit');
+        return new Resource(
+            $region->createItem($request->all())
+        );
     }
 
     /**
      * Update the specified resource in storage.
-     * @param Request $request
+     *
+     * @param Validate $request
      * @param int $id
-     * @return Renderable
+     * @param Region $region
+     * @return Resource
      */
-    public function update(Request $request, $id)
+    public function update(Validate $request, $id, Region $region)
     {
-        //
+        return new Resource(
+            $region->updateItem($id, $request->all())
+        );
     }
 
     /**
      * Remove the specified resource from storage.
+     *
      * @param int $id
-     * @return Renderable
+     * @param Region $region
+     * @return Resource
      */
-    public function destroy($id)
+    public function destroy($id, Region $region)
     {
-        //
+        return new Resource(
+            $region->destroyItem($id)
+        );
     }
 }

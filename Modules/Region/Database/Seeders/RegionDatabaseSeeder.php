@@ -4,6 +4,7 @@ namespace Modules\Region\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class RegionDatabaseSeeder extends Seeder
 {
@@ -16,6 +17,14 @@ class RegionDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        DB::table("regions")->insert([
+            ["name" => "África",        "created_at" => now(), "updated_at" => now()],
+            ["name" => "Antártida",     "created_at" => now(), "updated_at" => now()],
+            ["name" => "Asia",          "created_at" => now(), "updated_at" => now()],
+            ["name" => "Europa",        "created_at" => now(), "updated_at" => now()],
+            ["name" => "Norte América", "created_at" => now(), "updated_at" => now()],
+            ["name" => "Oceanía",       "created_at" => now(), "updated_at" => now()],
+            ["name" => "Sur América",   "created_at" => now(), "updated_at" => now()]
+        ]);
     }
 }

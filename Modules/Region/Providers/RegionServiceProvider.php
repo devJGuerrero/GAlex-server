@@ -2,6 +2,7 @@
 
 namespace Modules\Region\Providers;
 
+use Modules\Region\Repositories\Region;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 
@@ -39,6 +40,9 @@ class RegionServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
+        $this->app->singleton(Region::class, function($app) {
+            return new Region();
+        });
     }
 
     /**

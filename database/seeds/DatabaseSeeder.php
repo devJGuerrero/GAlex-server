@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Modules\Region\Database\Seeders\RegionDatabaseSeeder;
 use Modules\Country\Database\Seeders\CountryDatabaseSeeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,7 +15,8 @@ class DatabaseSeeder extends Seeder
   {
     $this->call([
         UserSeeder::class,
-        CountryDatabaseSeeder::class
+        RegionDatabaseSeeder::class,
+        CountryDatabaseSeeder::class,
     ]);
   }
 }

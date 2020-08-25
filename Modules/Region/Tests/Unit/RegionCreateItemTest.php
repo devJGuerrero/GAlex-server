@@ -7,15 +7,15 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Modules\Region\Database\Seeders\RegionDatabaseSeeder;
 
-class RegionDestroyItem extends TestCase
+class RegionCreateItemTest extends TestCase
 {
     use DatabaseMigrations;
     /**
-     * Unit test: Destroy region.
+     * Unit test: Insert region.
      *
      * @return void
      */
-    public function testRegionDestroyItem()
+    public function testRegionCreateItem()
     {
         # Population table of regions
         $this->seed(RegionDatabaseSeeder::class);
@@ -23,13 +23,29 @@ class RegionDestroyItem extends TestCase
         $response = $this->withHeaders([
             "Accept" => "application/json"
         ])
-            ->json("DELETE", "api/regions/1");
+            ->json("POST", "api/regions", [
+                 "name" => "Continente"
+            ]);
         $response
-            ->assertStatus(Response::HTTP_OK)
+            ->assertCreated()
             ->assertJsonStructure([
                 "data" => [
                     "id", "name", "created", "updated"
                 ]
             ]);
+    }
+
+    /**
+     * Unit test: Validate field name region.
+     *
+     * @return void
+     */
+    public function testRegionCreateItemValidateFieldName() {
+        $response = $this->withHeaders([
+            "Accept" => "application/json"
+        ])
+            ->json("POST", "api/regions");
+        $response
+            ->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 }

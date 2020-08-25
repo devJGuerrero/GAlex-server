@@ -7,15 +7,15 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Modules\Region\Database\Seeders\RegionDatabaseSeeder;
 
-class RegionGetItemsRepository extends TestCase
+class RegionGetItemRepositoryTest extends TestCase
 {
     use DatabaseMigrations;
     /**
-     * Unit test: Get all regions.
+     * Unit test: Obtain a region by identifier.
      *
      * @return void
      */
-    public function testRegionGetItems()
+    public function testRegionGetItem()
     {
         # Population table of regions
         $this->seed(RegionDatabaseSeeder::class);
@@ -24,13 +24,12 @@ class RegionGetItemsRepository extends TestCase
         $response = $this->withHeaders([
             "Accept" => "application/json"
         ])
-        ->json("GET", "api/regions");
+            ->json("GET", "api/regions/7");
         $response
             ->assertStatus(Response::HTTP_OK)
-            ->assertJsonCount(7, "data")
             ->assertJsonStructure([
                 "data" => [
-                    ["id", "name", "created", "updated"]
+                    "id", "name", "created", "updated"
                 ]
             ]);
     }

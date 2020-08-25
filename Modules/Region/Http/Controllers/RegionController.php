@@ -3,9 +3,9 @@
 namespace Modules\Region\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use Modules\Region\Repositories\Region;
-use Modules\Region\Transformers\Resource;
-use Modules\Region\Http\Requests\Validate;
+use Modules\Region\Http\Requests\RegionRequest;
+use Modules\Region\Transformers\RegionResource;
+use Modules\Region\Repositories\RegionRepository;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class RegionController extends Controller
@@ -13,70 +13,60 @@ class RegionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Region $region
+     * @param RegionRepository $region
      * @return AnonymousResourceCollection
      */
-    public function index(Region $region)
+    public function index(RegionRepository $region): AnonymousResourceCollection
     {
-        return Resource::collection(
-            $region->getItems()
-        );
+        return RegionResource::collection($region->getItems());
     }
 
     /**
      * Show the specified resource.
      *
-     * @param int $id
-     * @param Region $region
-     * @return Resource
+     * @param string $id
+     * @param RegionRepository $region
+     * @return RegionResource
      */
-    public function show($id, Region $region)
+    public function show(string $id, RegionRepository $region): RegionResource
     {
-        return new Resource(
-            $region->getItem($id)
-        );
+        return new RegionResource($region->getItem($id));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param Validate $request
-     * @param Region $region
-     * @return Resource
+     * @param RegionRequest $request
+     * @param RegionRepository $region
+     * @return RegionResource
      */
-    public function store(Validate $request, Region $region)
+    public function store(RegionRequest $request, RegionRepository $region): RegionResource
     {
-        return new Resource(
-            $region->createItem($request->all())
-        );
+        return new RegionResource($region->createItem($request->all()));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param Validate $request
-     * @param int $id
-     * @param Region $region
-     * @return Resource
+     * @param RegionRequest $request
+     * @param string $id
+     * @param RegionRepository $region
+     * @return RegionResource
      */
-    public function update(Validate $request, $id, Region $region)
+    public function update(RegionRequest $request, string $id, RegionRepository $region): RegionResource
     {
-        return new Resource(
-            $region->updateItem($id, $request->all())
-        );
+        return new RegionResource($region->updateItem($id, $request->all()));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
-     * @param Region $region
-     * @return Resource
+     * @param string $id
+     * @param RegionRepository $region
+     * @return RegionResource
      */
-    public function destroy($id, Region $region)
+    public function destroy(string $id, RegionRepository $region): RegionResource
     {
-        return new Resource(
-            $region->destroyItem($id)
-        );
+        return new RegionResource($region->destroyItem($id));
     }
 }

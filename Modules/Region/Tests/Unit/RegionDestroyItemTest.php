@@ -1,29 +1,29 @@
 <?php
 
-namespace Modules\Country\Tests\Unit;
+namespace Modules\Region\Tests\Unit;
 
 use Tests\TestCase;
 use Symfony\Component\HttpFoundation\Response;
-use Modules\Country\Database\Seeders\CountryDatabaseSeeder;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Modules\Region\Database\Seeders\RegionDatabaseSeeder;
 
-class CountryDestroyItem extends TestCase
+class RegionDestroyItemTest extends TestCase
 {
     use DatabaseMigrations;
     /**
-     * Unit test: Destroy country.
+     * Unit test: Destroy region.
      *
      * @return void
      */
-    public function testCountryDestroyItem()
+    public function testRegionDestroyItem()
     {
-        # Population table of countries
-        $this->seed(CountryDatabaseSeeder::class);
+        # Population table of regions
+        $this->seed(RegionDatabaseSeeder::class);
 
         $response = $this->withHeaders([
             "Accept" => "application/json"
         ])
-            ->json("DELETE", "api/countries/1");
+            ->json("DELETE", "api/regions/1");
         $response
             ->assertStatus(Response::HTTP_OK)
             ->assertJsonStructure([

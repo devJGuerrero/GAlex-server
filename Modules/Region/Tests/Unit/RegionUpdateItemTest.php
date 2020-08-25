@@ -1,30 +1,30 @@
 <?php
 
-namespace Modules\Country\Tests\Unit;
+namespace Modules\Region\Tests\Unit;
 
 use Tests\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Modules\Country\Database\Seeders\CountryDatabaseSeeder;
+use Modules\Region\Database\Seeders\RegionDatabaseSeeder;
 
-class CountryUpdateItem extends TestCase
+class RegionUpdateItemTest extends TestCase
 {
     use DatabaseMigrations;
     /**
-     * Unit test: Update country.
+     * Unit test: Update region.
      *
      * @return void
      */
-    public function testCountryUpdateItem()
+    public function testRegionUpdateItem()
     {
-        # Population table of countries
-        $this->seed(CountryDatabaseSeeder::class);
+        # Population table of regions
+        $this->seed(RegionDatabaseSeeder::class);
 
         $response = $this->withHeaders([
             "Accept" => "application/json"
         ])
-            ->json("PUT", "api/countries/1", [
-                "name" => "Albania"
+            ->json("PUT", "api/regions/1", [
+                "name" => "Otro Continente"
             ]);
         $response
             ->assertStatus(Response::HTTP_OK)
@@ -36,15 +36,15 @@ class CountryUpdateItem extends TestCase
     }
 
     /**
-     * Unit test: Validate field name country.
+     * Unit test: Validate field name region.
      *
      * @return void
      */
-    public function testCountryUpdateItemValidateFieldName() {
+    public function testRegionUpdateItemValidateFieldName() {
         $response = $this->withHeaders([
             "Accept" => "application/json"
         ])
-            ->json("PUT", "api/countries/1");
+            ->json("PUT", "api/regions/1");
         $response
             ->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
     }

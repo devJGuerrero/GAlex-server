@@ -6,16 +6,10 @@
 >
     <testsuites>
         <testsuite name="Unit">
-            <directory suffix=".php">./Modules/Region/Tests/Unit</directory>
+            <directory suffix="Test.php">./Modules</directory>
         </testsuite>
         <testsuite name="Feature">
-            <directory suffix=".php">./Modules/Region/Tests/Feature</directory>
-        </testsuite>
-        <testsuite name="Unit">
-            <directory suffix=".php">./Modules/Country/Tests/Unit</directory>
-        </testsuite>
-        <testsuite name="Feature">
-            <directory suffix=".php">./Modules/Country/Tests/Feature</directory>
+            <directory suffix="Test.php">./Modules</directory>
         </testsuite>
     </testsuites>
     <filter>

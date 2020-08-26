@@ -5,6 +5,7 @@ namespace Modules\Country\Tests\Unit;
 use Tests\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Modules\Region\Database\Seeders\RegionDatabaseSeeder;
 use Modules\Country\Database\Seeders\CountryDatabaseSeeder;
 
 class CountryGetItemRepositoryTest extends TestCase
@@ -18,7 +19,9 @@ class CountryGetItemRepositoryTest extends TestCase
     public function testCountryGetItem()
     {
         # Population table of countries
-        $this->seed(CountryDatabaseSeeder::class);
+        $this
+            ->seed(RegionDatabaseSeeder::class)
+            ->seed(CountryDatabaseSeeder::class);
 
         # Request all countries and validate response structure
         $response = $this->withHeaders([
@@ -29,7 +32,7 @@ class CountryGetItemRepositoryTest extends TestCase
             ->assertStatus(Response::HTTP_OK)
             ->assertJsonStructure([
                 "data" => [
-                    "id", "name", "created", "updated"
+                    "id", "name", "region", "created", "updated"
                 ]
             ]);
     }

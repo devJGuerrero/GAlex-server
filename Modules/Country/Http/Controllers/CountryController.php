@@ -3,9 +3,9 @@
 namespace Modules\Country\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use Modules\Country\Repositories\Country;
-use Modules\Country\Transformers\Resource;
-use Modules\Country\Http\Requests\ValidateStore;
+use Modules\Country\Http\Requests\CountryRequest;
+use Modules\Country\Transformers\CountryResource;
+use Modules\Country\Repositories\CountryRepository;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class CountryController extends Controller
@@ -13,70 +13,60 @@ class CountryController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Country $country
+     * @param CountryRepository $country
      * @return AnonymousResourceCollection
      */
-    public function index(Country $country)
+    public function index(CountryRepository $country): AnonymousResourceCollection
     {
-        return Resource::collection(
-            $country->getItems()
-        );
+        return CountryResource::collection($country->getItems());
     }
 
     /**
      * Show the specified resource.
      *
-     * @param Country $country
-     * @param int $id
-     * @return Resource
+     * @param string $id
+     * @param CountryRepository $country
+     * @return CountryResource
      */
-    public function show(Country $country, $id)
+    public function show(string $id, CountryRepository $country): CountryResource
     {
-        return new Resource(
-            $country->getItem($id)
-        );
+        return new CountryResource($country->getItem($id));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param ValidateStore $request
-     * @param Country $country
-     * @return Resource
+     * @param CountryRequest $request
+     * @param CountryRepository $country
+     * @return CountryResource
      */
-    public function store(ValidateStore $request, Country $country)
+    public function store(CountryRequest $request, CountryRepository $country): CountryResource
     {
-        return new Resource(
-            $country->createItem($request->all())
-        );
+        return new CountryResource($country->createItem($request->all()));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param ValidateStore $request
-     * @param int $id
-     * @param Country $country
-     * @return Resource
+     * @param CountryRequest $request
+     * @param string $id
+     * @param CountryRepository $country
+     * @return CountryResource
      */
-    public function update(ValidateStore $request, $id, Country $country)
+    public function update(CountryRequest $request, string $id, CountryRepository $country): CountryResource
     {
-        return new Resource(
-            $country->updateItem($id, $request->all())
-        );
+        return new CountryResource($country->updateItem($id, $request->all()));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
-     * @param Country $country
-     * @return Resource
+     * @param string $id
+     * @param CountryRepository $country
+     * @return CountryResource
      */
-    public function destroy($id, Country $country)
+    public function destroy(string $id, CountryRepository $country): CountryResource
     {
-        return new Resource(
-            $country->destroyItem($id)
-        );
+        return new CountryResource($country->destroyItem($id));
     }
 }

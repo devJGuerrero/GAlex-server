@@ -4,8 +4,9 @@ namespace Modules\Country\Tests\Unit;
 
 use Tests\TestCase;
 use Symfony\Component\HttpFoundation\Response;
-use Modules\Country\Database\Seeders\CountryDatabaseSeeder;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Modules\Region\Database\Seeders\RegionDatabaseSeeder;
+use Modules\Country\Database\Seeders\CountryDatabaseSeeder;
 
 class CountryDestroyItemTest extends TestCase
 {
@@ -18,7 +19,9 @@ class CountryDestroyItemTest extends TestCase
     public function testCountryDestroyItem()
     {
         # Population table of countries
-        $this->seed(CountryDatabaseSeeder::class);
+        $this
+            ->seed(RegionDatabaseSeeder::class)
+            ->seed(CountryDatabaseSeeder::class);
 
         $response = $this->withHeaders([
             "Accept" => "application/json"
@@ -28,7 +31,7 @@ class CountryDestroyItemTest extends TestCase
             ->assertStatus(Response::HTTP_OK)
             ->assertJsonStructure([
                 "data" => [
-                    "id", "name", "created", "updated"
+                    "id", "name", "region", "created", "updated"
                 ]
             ]);
     }

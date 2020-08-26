@@ -9,14 +9,14 @@ use Illuminate\Database\Eloquent\Collection;
  * @method findOrFail(string $id)
  * @method create(array $attributes)
  */
-class RegionRepository extends Region {
+class RegionRepository {
     /**
      * Get all regions
      *
      * @return Collection|Region[]
      */
     public function getItems(): Collection {
-        return $this->all();
+        return Region::all();
     }
 
     /**
@@ -26,7 +26,7 @@ class RegionRepository extends Region {
      * @return Region
      */
     public function getItem(string $id): Region {
-        return $this->findOrFail($id);
+        return Region::findOrFail($id);
     }
 
     /**
@@ -36,7 +36,7 @@ class RegionRepository extends Region {
      * @return Region
      */
     public function createItem(array $attributes): Region {
-        return $this->create($attributes);
+        return Region::create($attributes);
     }
 
     /**
@@ -47,7 +47,7 @@ class RegionRepository extends Region {
      * @return Region
      */
     public function updateItem(string $id, array $attributes): Region {
-        return tap($this->findOrFail($id))->update($attributes);
+        return tap(Region::findOrFail($id))->update($attributes);
     }
 
     /**
@@ -57,7 +57,7 @@ class RegionRepository extends Region {
      * @return Region
      */
     public function destroyItem(string $id): Region {
-        $region = $this->findOrFail($id); $this->destroy($id);
+        $region = Region::findOrFail($id); Region::destroy($id);
         return $region;
     }
 }

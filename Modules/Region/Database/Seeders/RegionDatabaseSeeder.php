@@ -3,8 +3,9 @@
 namespace Modules\Region\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
+use Modules\Region\Entities\Region;
 
 class RegionDatabaseSeeder extends Seeder
 {

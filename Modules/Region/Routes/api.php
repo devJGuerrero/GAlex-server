@@ -14,7 +14,7 @@
 Route::group(["middleware" => "api"], function () {
     # Display a listing of the resource.
     Route::get("regions", "RegionController@index");
-
+    
     # Show the specified resource.
     Route::get("regions/{id}", "RegionController@show");
 

@@ -11,7 +11,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
  * @property mixed updated_at
  * @property mixed id
  */
-class Resource extends JsonResource
+class CountryResource extends JsonResource
 {
     /**
      * Transform the resource into an array.

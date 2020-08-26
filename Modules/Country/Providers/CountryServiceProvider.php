@@ -3,8 +3,8 @@
 namespace Modules\Country\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Modules\Country\Repository\Country;
 use Illuminate\Database\Eloquent\Factory;
+use Modules\Country\Repositories\CountryRepository;
 
 class CountryServiceProvider extends ServiceProvider
 {
@@ -40,8 +40,8 @@ class CountryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
-        $this->app->singleton(Country::class, function($app) {
-            return new Country();
+        $this->app->singleton(CountryRepository::class, function($app) {
+            return new CountryRepository();
         });
     }
 

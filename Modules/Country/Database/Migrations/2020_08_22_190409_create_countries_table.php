@@ -16,6 +16,8 @@ class CreateCountriesTable extends Migration
         Schema::create('countries', function (Blueprint $table) {
             $table->id();
             $table->string("name", 60);
+            $table->unsignedBigInteger("region_id");
+            $table->foreign("region_id")->references("id")->on("regions");
             $table->timestamps();
             $table->softDeletes();
         });

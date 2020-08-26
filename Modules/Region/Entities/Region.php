@@ -2,16 +2,13 @@
 
 namespace Modules\Region\Entities;
 
+use Modules\Country\Entities\Country;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Region extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = "regions";
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -21,4 +18,12 @@ class Region extends Model
     protected $fillable = [
         "name"
     ];
+
+    /**
+     * Get the countries for the blog region.
+     */
+    public function countries()
+    {
+        return $this->hasMany(Country::class);
+    }
 }

@@ -9,14 +9,14 @@ use Illuminate\Database\Eloquent\Collection;
  * @method findOrFail(string $id)
  * @method create(array $attributes)
  */
-class CountryRepository extends Country {
+class CountryRepository {
     /**
      * Get all countries
      *
      * @return Collection|Country[]
      */
     public function getItems(): Collection {
-        return $this->all();
+        return Country::all();
     }
 
     /**
@@ -26,7 +26,7 @@ class CountryRepository extends Country {
      * @return Country
      */
     public function getItem(string $id): Country {
-        return $this->findOrFail($id);
+        return Country::findOrFail($id);
     }
 
     /**
@@ -36,7 +36,7 @@ class CountryRepository extends Country {
      * @return Country
      */
     public function createItem(array $attributes): Country {
-        return $this->create($attributes);
+        return Country::create($attributes);
     }
 
     /**
@@ -47,7 +47,7 @@ class CountryRepository extends Country {
      * @return Country
      */
     public function updateItem(string $id, array $attributes): Country {
-        return tap($this->findOrFail($id))->update($attributes);
+        return tap(Country::findOrFail($id))->update($attributes);
     }
 
     /**
@@ -57,7 +57,7 @@ class CountryRepository extends Country {
      * @return Country
      */
     public function destroyItem(string $id): Country {
-        $country = $this->findOrFail($id); $this->destroy($id);
+        $country = Country::findOrFail($id); Country::destroy($id);
         return $country;
     }
 }

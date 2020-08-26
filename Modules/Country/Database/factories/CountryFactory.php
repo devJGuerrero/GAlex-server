@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factory;
 
 $factory->define(Country::class, function (Faker $faker) {
     return [
-        "name" => $faker->country
+        "name"      => $faker->country,
+        "region_id" => rand(1, 7)
     ];
 });

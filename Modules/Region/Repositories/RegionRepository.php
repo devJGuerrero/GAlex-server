@@ -2,62 +2,63 @@
 
 namespace Modules\Region\Repositories;
 
+use App\Repository\BaseRepository;
 use Modules\Region\Entities\Region;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
 
-/**
- * @method findOrFail(string $id)
- * @method create(array $attributes)
- */
-class RegionRepository {
+class RegionRepository extends BaseRepository {
     /**
-     * Get all regions
+     * Get instance of model.
+     *
+     * @return Model
+     */
+    function getModel(): Model { return new Region(); }
+
+    /**
+     * Get region by its identifier.
+     *
+     * @param string $id
+     * @return Region
+     */
+    public function findOrFail(string $id): Model { return parent::findOrFail($id); }
+
+    /**
+     * Get all regions.
      *
      * @return Collection|Region[]
      */
-    public function getItems(): Collection {
-        return Region::all();
-    }
+    public function all(): Collection { return parent::all(); }
 
     /**
-     * Get region by its identifier
-     *
-     * @param string $id
-     * @return Region
-     */
-    public function getItem(string $id): Region {
-        return Region::findOrFail($id);
-    }
-
-    /**
-     * Store a region
+     * Store a region.
      *
      * @param array $attributes
      * @return Region
      */
-    public function createItem(array $attributes): Region {
-        return Region::create($attributes);
-    }
+    public function create(array $attributes): Model { return parent::create($attributes); }
 
     /**
-     * Update a region
+     * Update a region.
      *
      * @param string $id
      * @param array $attributes
      * @return Region
      */
-    public function updateItem(string $id, array $attributes): Region {
-        return tap(Region::findOrFail($id))->update($attributes);
+    public function update(string $id, array $attributes): Model
+    {
+        return tap(parent::findOrFail($id))->update($attributes);
     }
 
     /**
-     * Delete a region
+     * Delete a region.
      *
      * @param string $id
      * @return Region
      */
-    public function destroyItem(string $id): Region {
-        $region = Region::findOrFail($id); Region::destroy($id);
+    public function delete(string $id): Model
+    {
+        $region = parent::findOrFail($id); parent::delete($id);
         return $region;
     }
 }

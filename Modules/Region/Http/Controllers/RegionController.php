@@ -11,38 +11,49 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 class RegionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Instance of repository.
+     *
+     * @var RegionRepository
+     */
+    protected $region;
+
+    /**
+     * RegionController constructor.
      *
      * @param RegionRepository $region
+     */
+    public function __construct(RegionRepository $region) { $this->region = $region; }
+
+    /**
+     * Display a listing of the resource.
+     *
      * @return AnonymousResourceCollection
      */
-    public function index(RegionRepository $region): AnonymousResourceCollection
+    public function index(): AnonymousResourceCollection
     {
-        return RegionResource::collection($region->getItems());
+        return RegionResource::collection($this->region->all());
     }
 
     /**
      * Show the specified resource.
      *
      * @param string $id
-     * @param RegionRepository $region
      * @return RegionResource
      */
-    public function show(string $id, RegionRepository $region): RegionResource
+    public function show(string $id): RegionResource
     {
-        return new RegionResource($region->getItem($id));
+        return new RegionResource($this->region->findOrFail($id));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param RegionRequest $request
-     * @param RegionRepository $region
      * @return RegionResource
      */
-    public function store(RegionRequest $request, RegionRepository $region): RegionResource
+    public function store(RegionRequest $request): RegionResource
     {
-        return new RegionResource($region->createItem($request->all()));
+        return new RegionResource($this->region->create($request->all()));
     }
 
     /**
@@ -50,23 +61,21 @@ class RegionController extends Controller
      *
      * @param RegionRequest $request
      * @param string $id
-     * @param RegionRepository $region
      * @return RegionResource
      */
-    public function update(RegionRequest $request, string $id, RegionRepository $region): RegionResource
+    public function update(RegionRequest $request, string $id): RegionResource
     {
-        return new RegionResource($region->updateItem($id, $request->all()));
+        return new RegionResource($this->region->update($id, $request->all()));
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param string $id
-     * @param RegionRepository $region
      * @return RegionResource
      */
-    public function destroy(string $id, RegionRepository $region): RegionResource
+    public function destroy(string $id): RegionResource
     {
-        return new RegionResource($region->destroyItem($id));
+        return new RegionResource($this->region->delete($id));
     }
 }
